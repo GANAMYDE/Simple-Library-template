@@ -1,0 +1,260 @@
+/* Tailwind Base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9; /* Light gray background */
+  color: #333; /* Dark text color */
+  line-height: 1.6;
+}
+
+/* Container for layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem; /* Padding for responsiveness */
+}
+
+/* Heading Styles */
+h1, h2, h3 {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 640px) {
+  body {
+    font-size: 0.9rem; /* Smaller font size on mobile */
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller headings on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 2rem; /* Adjust padding for medium-sized screens */
+  }
+
+  .card {
+    width: 100%; /* Cards will stack on medium screens */
+  }
+}
+
+/* Grid Layout for Cards */
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+    gap: 2rem; /* Adjust gap between cards */
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    gap: 1rem; /* Adjust gap between cards */
+  }
+}
+
+@media (max-width: 640px) {
+  .card-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+    gap: 1rem; /* Adjust gap between cards */
+  }
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden; /* Prevents overflow for child elements */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); /* Enhance shadow on hover */
+}
+
+/* Card Image Container */
+.card img {
+  width: 250px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+/* Hover effect for images */
+.card img:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* Card Text Styles */
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 1rem;
+  text-align: center; /* Ensure description text is centered */
+}
+
+.card-status {
+  font-size: 0.875rem;
+  color: #888;
+}
+
+/* Genre Badge Style */
+.card-genre {
+  display: inline-block;
+  background-color: #4C6F91;
+  color: white;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+}
+
+/* Button Styling */
+.card-button {
+  background-color: #f43f5e; /* Red button */
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #e11d48;
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Utility classes for spacing */
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.rounded-lg {
+  border-radius: 10px;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #e5e5e5;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn {
+  background-color: #3498db;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #2980b9;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer .social-icons a {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.2);
+}
